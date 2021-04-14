@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: html_header">
+
+</head>
+<body>
+    <div th:replace="fragments :: menu"></div>
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col">
+                  <table class="table table-hover">
+                     <tr>
+                        <th>Id</th>
+                        <th>Vorname</th>
+                        <th>Nachname</th>
+                        <th>Email</th>
+                        <th>Prog.Sprache</th>
+                        <th>Anfang</th>
+                        <th>Gender</th>
+                        <th>MainImage</th>
+                        <th colspan="5">Extra Image</th>
+                        <th colspan="2">Action</th>
+                     </tr>
+                     <tr th:each="angst :${studentlist}">
+                         <td th:text="${angst.id}"></td>
+                        <td> <a th:href="@{/imageform}" th:text="${angst.vorname}"></a></td>
+                         <td th:text="${angst.nachname}"></td>
+                         <td th:text="${angst.email}"></td>
+                         <td th:text="${angst.progSprache}"></td>
+                         <td th:text="${angst.datum}"></td>
+                         <td th:text="${angst.gender}"></td>
+                         <td>
+                            <img th:src="@{${angst.MainImagePath}}" width="50" height="50">
+                         </td>
+                         
+                         
+                         <td><a th:href="@{'/delete/'+${angst.id}}" class="btn btn-danger">Delete</a></td>
+                         <td><a th:href="@{'/update/'+${angst.id}}" class="btn btn-primary">Update</a></td>
+                     </tr>
+                  </table>
+              </div>
+          </div>
+      </div>
+    <div th:replace="fragments :: footer"></div>
+</body>
+</html>

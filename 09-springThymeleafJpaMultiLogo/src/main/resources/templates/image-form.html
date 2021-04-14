@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: html_header">
+
+</head>
+<body>
+    <div th:replace="fragments :: menu"></div>
+      <div class="container-fluid">
+          <div class="row text-center">
+              <div class="col">
+                <th:block th:each="angst :${imagelist}">
+                 <div class="row">
+                    <div class="col-3">
+                      <div class="card">
+                          <img th:src="@{${angst.MainImagePath}}" class="car-img-top">
+                         <div class="card-body">
+                           <h3>Java Programlamaa</h3>
+                         </div>
+                     </div>
+                    </div>
+                    
+                    <div class="col-3">
+                      <div class="card">
+                          <img th:src="@{${angst.ExtraImagePath1}}" class="car-img-top">
+                         <div class="card-body">
+                           <h3>Java Programlamaa</h3>
+                         </div>
+                     </div>
+                    </div>
+                    
+                    <div class="col-3">
+                      <div class="card">
+                          <img th:src="@{${angst.ExtraImagePath2}}" class="car-img-top">
+                         <div class="card-body">
+                           <h3>Java Programlamaa</h3>
+                         </div>
+                     </div>
+                    </div>
+                    
+                    <div class="col-3">
+                      <div class="card">
+                          <img th:src="@{${angst.ExtraImagePath3}}" class="car-img-top">
+                         <div class="card-body">
+                           <h3>Java Programlamaa</h3>
+                         </div>
+                     </div>
+                    </div>
+                     
+                </div>
+                </th:block>
+                    
+              </div>
+          </div>
+      </div>
+    <div th:replace="fragments :: footer"></div>
+</body>
+</html>
